@@ -29,7 +29,7 @@ const UserPropertyDetailsRelated = ({similar}) => {
             location,
             price,
            bedroom, 
-           bathrooms ,
+           bathroom ,
           } = relprop;
 
           return (
@@ -73,7 +73,7 @@ const UserPropertyDetailsRelated = ({similar}) => {
                       <LiaBedSolid /> {bedroom}Bedrooms
                     </p>
                     <p className="d-flex align-items-center gap-2  text-secondary">
-                      <LiaBathSolid /> {bathrooms}Bathrooms
+                      <LiaBathSolid /> {bathroom}Bathrooms
                     </p>
                   </div>
                 </div>
