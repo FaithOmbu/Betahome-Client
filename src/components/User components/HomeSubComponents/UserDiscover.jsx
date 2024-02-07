@@ -122,9 +122,9 @@ const UserDiscover = () => {
                              <h4>{title}</h4>
                              <h4>{formatPrice(price)}</h4>
                              <div className="features">
-                                <p>{bedroom} Bed </p>
+                                <p>{bedroom} bedrooms </p>
                                 <div className='userdiscover-line'></div>
-                                <p>{bathroom} Bath </p>
+                                <p>{bathroom} bathrooms </p>
                                 <div className='userdiscover-line'></div>
                                 <p>{squareFeet}Ft</p>
                              </div>

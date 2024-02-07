@@ -92,7 +92,7 @@ const UserFeaturedProperties = () => {
 
                     <div className="toilet">
                       <LiaBathSolid className="fs-3" />
-                      <span>{bathroom} bathroom</span>
+                      <span>{bathroom} bathrooms</span>
                     </div>
                   </div>
 
