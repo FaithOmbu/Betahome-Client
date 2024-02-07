@@ -3,7 +3,6 @@ import { MdOutlineCameraAlt } from "react-icons/md";
 import "../../styles/Admin Styles/AdminAddProperty.css";
 import black from "../../assets/images/black.jpg";
 
-// eslint-disable-next-line react/prop-types
 
 export const AdminAddPic = () => {
   const [images, setImages] = useState({

@@ -9,7 +9,6 @@ import { IoBedOutline } from "react-icons/io5";
 import { LuBath } from "react-icons/lu";
 import { FaCar } from "react-icons/fa";
 import { BsArrowDownRightSquare } from "react-icons/bs";
-
 import ReactPlayer from "react-player";
 import { useGlobalContext } from "../../Hooks/useGlobalContext";
 import axios from "axios";

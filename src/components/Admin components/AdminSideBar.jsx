@@ -5,7 +5,6 @@ import "../../styles/Admin Styles/AdminSideBar.css";
 import AllProp from "./../../assets/images/allprop.png";
 import Addnew from "./../../assets/images/addnew.png";
 import Dashboard from "./../../assets/images/dashboard.png";
-// import { MdArrowForwardIos } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { TiThMenu } from "react-icons/ti";
 
