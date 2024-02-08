@@ -8,6 +8,7 @@ import { CiHeart } from "react-icons/ci";
 import { BsCameraVideoFill } from "react-icons/bs";
 import { GrLink } from "react-icons/gr";
 import { IoImageSharp } from "react-icons/io5";
+import { formatPrice } from "../../../utils/helpers";
 
 const UserPropertyDetailsRelated = ({similar}) => {
   const { properties } = useGlobalContext();
@@ -82,8 +83,8 @@ const UserPropertyDetailsRelated = ({similar}) => {
 
                 <div className="d-flex justify-content-between text-secondary  p-2">
                   <p className="fw-bold">
-                    <span className="naira">N</span>
-                    {price}
+                    {/* <span className="naira">N</span> */}
+                    {formatPrice(price)}
                   </p>
                   <div className="d-flex gap-3 fs-5 ">
                     <TbSwitchHorizontal />

@@ -40,9 +40,26 @@ const AppProvider = ({ children }) => {
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
   const [bed,setBed] = useState("")
+  const [price,setPrice] = useState('')
   const [isLoading, setIsLoading] = useState(true);
   const [properties,setProperties] =  useState([])
-  const url = `${BASE_URL}/property?location=${location}&type=${type}&bedroom=${bed}`;
+  const url = `${BASE_URL}/property?location=${location}&type=${type}&bedroom=${bed}&sort=${price}`;
+   
+  const updatePrice = (e) => {
+    if (e.target.value === 'Default') {
+      setPrice('')
+    } else {
+      setPrice(e.target.value)
+    }
+  }
+
+  const clearFilters = () => {
+    setLocation('')
+    setBed('')
+    setPrice('')
+    setType('')
+  }
+
 
   const getProperties = async () => {
     setIsLoading(true)
@@ -60,7 +77,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     getProperties();
-  },[type,location,bed])
+  },[type,location,bed, price])
 
   return (
     <AppContext.Provider
@@ -78,7 +95,11 @@ const AppProvider = ({ children }) => {
         isLoading,
         setBed,
         setLocation,
-        setType
+        setType,
+        setPrice,
+        updatePrice,
+        price,
+        clearFilters
       }}
     >
       {children}

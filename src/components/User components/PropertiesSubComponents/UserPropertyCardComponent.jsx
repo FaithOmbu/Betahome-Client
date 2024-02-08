@@ -14,16 +14,19 @@ import { AiFillPicture } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Loading from "../../Loading";
 import { formatPrice } from "../../../utils/helpers";
-
+import { FiRefreshCcw, FiRefreshCw } from "react-icons/fi";
 const UserPropertyCardComponent = () => {
-  const [propertyList, setpropertyList] = useState(null);
-  const { properties,isLoading } = useGlobalContext();
-
+  const { properties, isLoading, price, updatePrice, clearFilters } = useGlobalContext();
+  const [spec, setSpec] = useState('')
   if (isLoading) {
-    return <Loading/>
+    return <Loading />;
   }
   if (!isLoading && properties.length < 1) {
-    return <h1 className="text-success display-5 mt-3">No Properties Meet Your Search</h1>
+    return (
+      <h1 className="text-success display-5 mt-3">
+        No Properties Meet Your Search
+      </h1>
+    );
   }
 
   return (
@@ -32,22 +35,31 @@ const UserPropertyCardComponent = () => {
 
       <div className="UserPropertiesFilter container ">
         <div className="UserPropertiesFilter1">
+   
           <p className="UserPropertiesFilter-p">
-            <LuSettings2 className="lg-4 " />  Filter
+          <button onClick={clearFilters} className="btn btn-sm btn-outline-success me-2"> 
+          <FiRefreshCw/>
+          </button>
+            <LuSettings2 className="lg-4 " /> Filter
           </p>
           <p className="UserPropertiesFilter-p ps-2">
             {" "}
-           {properties.length} results
+            {properties.length} results
           </p>
         </div>
         <div className="UserPropertiesFilter2 d-flex align-items-center justify-content-center ">
           <p className="UserPropertiesFilter-p">Sort by:</p>
-
-          <select name="" id="" className="bg-white border-0 p-0 mb-3 default">
-            <option value="Default">Default </option>
-            <option value="Duplex">Price(Lowest-Highest)</option>
-            <option value="Duplex">Price(Highest-Lowest)</option>
-          </select>
+          <form>
+            <select
+            value={price} onChange={updatePrice}
+              name=""
+              id=""
+              className="bg-white border-0 p-0 mb-3 default" >
+              <option value="Default">Default </option>
+              <option value="price">Price(Lowest-Highest)</option>
+              <option value="-price">Price(Highest-Lowest)</option>
+            </select>
+          </form>
         </div>
       </div>
 
@@ -56,11 +68,11 @@ const UserPropertyCardComponent = () => {
         {properties.map((property) => {
           const {
             _id,
-            media:{images},
+            media: { images },
             title,
             price,
             location,
-            bedroom, 
+            bedroom,
             bathroom,
           } = property;
 

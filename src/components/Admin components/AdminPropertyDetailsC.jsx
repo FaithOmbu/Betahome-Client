@@ -112,9 +112,9 @@ redirect('/admin/properties')
           </div>
 
           <div>
-            <Link to={`/admin/edit/${propertyId}`}>
+            <Link to={`/admin/edit/${propertyId}`}disabled onClick={(e) => e.preventDefault()} style={{cursor: 'not allowed'}}>
               {" "}
-              <button className="btn bg-success text-white fw-semibold me-2">
+              <button className="btn bg-success text-white fw-semibold me-2 " disabled style={{cursor: 'not allowed'}}>
                 Edit
               </button>{" "}
             </Link>
